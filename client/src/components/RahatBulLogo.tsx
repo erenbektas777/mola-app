@@ -1,0 +1,27 @@
+export function RahatBulLogo({ size = 30 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className="shrink-0 shadow-xs"
+    >
+      <rect width="36" height="36" rx="10" fill="#292524" />
+      <circle cx="11.5" cy="11.5" r="2.2" fill="#FFFFFF" />
+      <path
+        d="M8.5 16.5C8.5 15.67 9.17 15 10 15H13C13.83 15 14.5 15.67 14.5 16.5V21.5H13V26.5H10V21.5H8.5V16.5Z"
+        fill="#FFFFFF"
+      />
+      <rect x="17.35" y="10" width="1.3" height="16.5" rx="0.65" fill="#94A3B8" opacity="0.65" />
+      <circle cx="24.5" cy="11.5" r="2.2" fill="#FFFFFF" />
+      <path
+        d="M22.2 15H26.8L28 22H25.8V26.5H23.2V22H21L22.2 15Z"
+        fill="#FFFFFF"
+      />
+      <circle cx="29.5" cy="6.5" r="2.5" fill="#10B981" />
+    </svg>
+  );
+}

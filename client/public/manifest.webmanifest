@@ -1,0 +1,17 @@
+{
+  "name": "Mola — En Yakın Temiz Tuvalet",
+  "short_name": "Mola",
+  "description": "İstanbul Avrupa Yakası'ndaki en yakın ücretsiz halka açık tuvaletleri bulun.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#FAF7F2",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

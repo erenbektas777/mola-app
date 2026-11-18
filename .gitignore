@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# Local SQLite database & runtime files
+*.db
+*.db-shm
+*.db-wal
+
+# Environment & OS files
+.env
+.env.*
+.DS_Store
+*.log

@@ -1,0 +1,10 @@
+{
+  "name": "mola-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix client run build && npm --prefix server run build",
+    "start": "node server/dist/index.js",
+    "test": "npm --prefix server test"
+  }
+}

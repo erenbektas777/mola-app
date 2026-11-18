@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-container {
+  font-family: inherit;
+  z-index: 1;
+  background: #F3EFE6;
+}
+
+.leaflet-tile-pane {
+  filter: sepia(14%) brightness(1.01) contrast(0.98);
+}
+
+@keyframes rahatbul-user-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.75;
+  }
+  70% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+.rahatbul-user-pulse {
+  animation: rahatbul-user-pulse 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes rahatbul-rating-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rahatbul-cluster-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rahatbul-cluster-bubble {
+  animation: rahatbul-cluster-pop 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center center;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rahatbul-cluster-bubble:hover {
+  transform: scale(1.08);
+}
+
+.rahatbul-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 26px;
+}
+
+.rahatbul-marker--entering {
+  animation: rahatbul-cluster-pop 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rahatbul-dot,
+.rahatbul-rating {
+  position: absolute;
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center center;
+}
+
+.rahatbul-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rahatbul-rating {
+  opacity: 0;
+  transform: scale(0.65);
+  pointer-events: none;
+  background-color: #38bdf8;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.28);
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 420ms ease,
+    box-shadow 420ms ease;
+}
+
+.rahatbul-map--ratings .rahatbul-dot {
+  opacity: 0;
+  transform: scale(0.65);
+  pointer-events: none;
+}
+
+.rahatbul-map--ratings .rahatbul-rating {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  background-color: var(--tier-bg, #059669);
+  box-shadow: 0 6px 16px var(--tier-glow, rgba(5, 150, 105, 0.32));
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 460ms cubic-bezier(0.22, 1, 0.36, 1) 200ms,
+    box-shadow 460ms cubic-bezier(0.22, 1, 0.36, 1) 200ms;
+}
