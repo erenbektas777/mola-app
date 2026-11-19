@@ -150,7 +150,7 @@ export function App() {
     loadToilets().catch(() => {});
   }, [loadToilets]);
 
-  const handleLocateMe = () => {
+  const handleLocateMe = useCallback(() => {
     if (!navigator.geolocation) return;
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -161,7 +161,11 @@ export function App() {
       },
       { enableHighAccuracy: true, timeout: 6000 }
     );
-  };
+  }, []);
+
+  useEffect(() => {
+    handleLocateMe();
+  }, [handleLocateMe]);
 
   const [showTopUpModal, setShowTopUpModal] = useState(false);
 
@@ -199,6 +203,7 @@ export function App() {
           <button
             type="button"
             onClick={() => {
+              handleLocateMe();
               setMode('user');
               setTab('map');
               setHasSelectedRole(true);
